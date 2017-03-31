@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+  PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+  "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+	<context id="testTables" targetRuntime="MyBatis3">
+		<commentGenerator>
+			<!-- 是否去除自动生成的注释 true：是 ： false:否 -->
+			<property name="suppressAllComments" value="true" />
+		</commentGenerator>
+		<!--数据库连接的信息：驱动类、连接地址、用户名、密码 -->
+		<jdbcConnection driverClass="com.mysql.jdbc.Driver"
+			connectionURL="jdbc:mysql://localhost:3306/woxingtianxia?useUnicode=true&amp;characterEncoding=GBK" userId="root"
+			password="686449">
+		</jdbcConnection>
+		<!-- <jdbcConnection driverClass="oracle.jdbc.OracleDriver"
+			connectionURL="jdbc:oracle:thin:@127.0.0.1:1521:yycg" 
+			userId="yycg"
+			password="yycg">
+		</jdbcConnection> -->
+
+		<!-- 默认false，把JDBC DECIMAL 和 NUMERIC 类型解析为 Integer，为 true时把JDBC DECIMAL 和 
+			NUMERIC 类型解析为java.math.BigDecimal -->
+		<javaTypeResolver>
+			<property name="forceBigDecimals" value="false" />
+		</javaTypeResolver>
+
+		<!-- targetProject:生成PO类的位置 -->
+		<javaModelGenerator targetPackage="com.eliteams.quick4j.web.model"
+			targetProject=".\src">
+			<!-- enableSubPackages:是否让schema作为包的后缀 -->
+			<property name="enableSubPackages" value="false" />
+			<!-- 从数据库返回的值被清理前后的空格 -->
+			<property name="trimStrings" value="true" />
+		</javaModelGenerator>
+        <!-- targetProject:mapper映射文件生成的位置 -->
+		<sqlMapGenerator targetPackage="com.eliteams.quick4j.web.dao"
+			targetProject=".\src">
+			<!-- enableSubPackages:是否让schema作为包的后缀 -->
+			<property name="enableSubPackages" value="false" />
+		</sqlMapGenerator>
+		<!-- targetPackage：mapper接口生成的位置 -->
+		<javaClientGenerator type="XMLMAPPER"
+			targetPackage="com.eliteams.quick4j.web.dao"
+			targetProject=".\src">
+			<!-- enableSubPackages:是否让schema作为包的后缀 -->
+			<property name="enableSubPackages" value="false" />
+		</javaClientGenerator>
+		<!-- 指定数据库表 -->
+		<!--<table tableName="t_user"></table>
+		<table tableName="new_invitenumber"></table>-->
+		<!--<table tableName="new_advertisement"></table>-->
+
+		<!--<table tableName="new_yueban"></table>-->
+		<!--<table tableName="new_yuebancomment"></table>-->
+		<!--<table tableName="new_yuebanimage"></table>-->
+		<!--<table tableName="new_yuebanreply"></table>-->
+
+
+	<!--	<table tableName="new_activity"></table>-->
+		<!--<table tableName="new_activitydetail"></table>-->
+
+		<!--<table tableName="new_join"></table>-->
+
+        <!--<table tableName="new_wallet"></table>-->
+
+		<!--<table tableName="t_campsite"></table>-->
+		<!--<table tableName="t_campsite_image"></table>-->
+		<!--<table tableName="t_friend"></table>-->
+
+       <!-- <table tableName="t_comment"></table>-->
+       <!-- <table tableName="t_resort"></table>-->
+        <!--<table tableName="t_score"></table>-->
+        <!--<table tableName="t_resort_image"></table>-->
+	<!--	<table tableName="t_collect"></table>-->
+
+		<!--<table tableName="new_software"></table>-->
+
+
+	<!--	<table tableName="orderdetail"></table>
+		<table tableName="user"></table>-->
+		<!-- <table schema="" tableName="sys_user"></table>
+		<table schema="" tableName="sys_role"></table>
+		<table schema="" tableName="sys_permission"></table>
+		<table schema="" tableName="sys_user_role"></table>
+		<table schema="" tableName="sys_role_permission"></table> -->
+
+		<!--<table schema="" tableName="new_attitude"></table>-->
+		<!--<table schema="" tableName="t_comment_image"></table>-->
+		<table schema="" tableName="t_report"></table>
+		
+		<!-- 有些表的字段需要指定java类型-->
+		<!-- <table schema="" tableName="t_user">
+			<columnOverride column="updated_at" javaType="String" />
+			 <columnOverride column="created_at" javaType="String" />
+			 <columnOverride column="last_login_date" javaType="String" />
+		</table>-->
+
+<!--		 <table schema="" tableName="new_advertisement">
+			<columnOverride column="adupdate" javaType="String" />
+			 <columnOverride column="advaliddate" javaType="String" />
+		 </table>-->
+		<!--<table schema="" tableName="new_yueban">
+			<columnOverride column="yuebandate" javaType="String" />
+			<columnOverride column="yuebanpublishtime" javaType="String" />
+		</table>-->
+
+		<!--<table schema="" tableName="new_yuebancomment">
+			<columnOverride column="yuebantime" javaType="String" />
+			</table>-->
+      <!--  <table schema="" tableName="new_yuebanreply">
+        <columnOverride column="yuebanreplydate" javaType="String" />
+        </table>-->
+
+<!--        <table schema="" tableName="new_activity">
+            <columnOverride column="starttime" javaType="String" />
+            <columnOverride column="endtime" javaType="String" />
+            <columnOverride column="publishtime" javaType="String" />
+        </table>-->
+
+	<!--	<table schema="" tableName="new_join">
+          <columnOverride column="jointime" javaType="String" />
+      </table>-->
+      <!--  <table schema="" tableName="new_wallet">
+      <columnOverride column="time" javaType="String" />
+  </table>-->
+
+
+<!--	<table schema="" tableName="t_campsite">
+	    <columnOverride column="created_at" javaType="String" />
+		<columnOverride column="updated_at" javaType="String" />
+	</table>-->
+
+
+<!--    <table schema="" tableName="new_software">
+    <columnOverride column="publishdate" javaType="String" />
+    </table>-->
+
+
+
+		<!--	<table schema="" tableName="t_campsite_image">
+                <columnOverride column="created_at" javaType="String" />
+                <columnOverride column="updated_at" javaType="String" />
+            </table>-->
+
+       <!-- 	<table schema="" tableName="t_friend">
+        <columnOverride column="created_at" javaType="String" />
+        <columnOverride column="updated_at" javaType="String" />
+    </table>-->
+
+       <!-- <table schema="" tableName="t_friend">
+            <columnOverride column="created_at" javaType="String" />
+            <columnOverride column="updated_at" javaType="String" />
+        </table>-->
+
+         <table schema="" tableName="t_report">
+          <columnOverride column="created_at" javaType="String" />
+          <columnOverride column="updated_at" javaType="String" />
+      </table>
+
+       <!-- <table schema="" tableName="t_resort">
+            <columnOverride column="created_at" javaType="String" />
+            <columnOverride column="updated_at" javaType="String" />
+            <columnOverride column="start_time" javaType="String" />
+            <columnOverride column="end_time" javaType="String" />
+        </table>-->
+     <!--    <table schema="" tableName="t_collect">
+     <columnOverride column="created_at" javaType="String" />
+     <columnOverride column="updated_at" javaType="String" />
+ </table>-->
+
+
+	</context>
+</generatorConfiguration>
